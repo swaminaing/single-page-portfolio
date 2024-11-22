@@ -1,0 +1,879 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+:root{
+     --headertext:'Oswald', sans-serif;;
+     --ptext:'Roboto', sans-serif;;
+     --main-bgcolorone: #eae4d9;
+     --main-bgcolortwo: #1f1e1d;
+     --textcolor: #f5f1eb;
+     --buttoncolor: #FF6347;
+}
+
+*{
+     box-sizing: border-box;
+}
+
+body{
+     margin: 0;
+     background-color: black;
+}
+
+/* Start Header Section */
+header{
+     width: 100%;
+     height: 100vh;
+     font-family: var(--ptext);
+     background-color: var(--main-bgcolortwo);
+
+     position: relative;
+     overflow: hidden;
+}
+
+/*Start Navigation*/
+.navbar{
+     padding: 7px;
+}
+
+.navbar.actives{
+     padding: 8px;
+     background-color: var(--main-bgcolortwo);
+     opacity: 0.9;
+}
+
+.navbar-brand{
+     font-size: 17px;
+     font-family: var(--headertext);
+     margin: 0 50px;
+}
+
+.navbar-brand span{
+     color: var(--buttoncolor);
+}
+
+.menuitems{
+     font-size: 14px;
+     color: var(--textcolor) !important;
+     text-decoration: none;
+
+     margin: 0 20px;
+     padding: 20px;
+     position: relative;
+}
+
+.menuitems::before{
+     content: '';
+     width: 100%;
+     height: 3px;
+     background-color: var(--buttoncolor);
+
+     position: absolute;
+     top: calc(100% + 6px);
+     left: 0;
+
+     transform: scale(0);
+     transition:  all 0.3s ease-in;
+}
+
+.menuitems:hover::before{
+     transform: scale(1);
+}
+
+.menuitems:hover{
+     color: var(--textcolor);
+}
+
+.menuitems:active{
+     color: var(--textcolor);
+     transform: scale(0.98);
+}
+
+.navbuttons{
+     cursor: pointer;
+}
+
+.lines1, .lines2, .lines3{
+     width: 25px;
+     height: 3px;
+     
+     margin: 4px 7px;
+     transition: all 0.4s ease;
+}
+
+.lines1{
+     transform: translateX(6px);
+}
+
+.lines3{
+     transform: translateX(6px);
+}
+
+.changes .lines1{
+     transform: translate(-10px);
+}
+
+.changes .lines3{
+     transform: translate(12px);
+}
+
+#nav{
+     margin-right: 40px;
+}
+/*End Navigation*/
+
+/* Start Banners */
+.banners{
+     font-family: var(--headertext);
+     letter-spacing: 3px;
+
+     position: absolute;
+     top: 50%;
+     left: 5%;
+
+     transform: translateY(-50%);
+
+     z-index: 2;
+}
+
+.banners h1{
+     font-size: 80px;
+     font-family: var(--headertext);
+     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+     -webkit-text-fill-color:  var(--textcolor); /* Will override color (regardless of order) */
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: var(--textcolor);
+
+     animation:  myanibanner 1s linear;
+}
+
+.banners h2{
+     font-size: 50px;
+     -webkit-text-fill-color:  #535353; /* Will override color (regardless of order) */
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: #535353;
+
+     animation:  myanibanner2 1s linear;
+}
+
+.banners h1 .square{
+     width: 25px;
+     height: 25px;
+     display: inline-block;
+     background-color: var(--buttoncolor);
+}
+
+.bannerbgtexts{
+     width: 110%;
+     height: 50%;
+
+     display: flex;
+     align-items: center;
+
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%) rotate(-15deg);
+    
+     z-index: 1;
+     overflow: hidden;
+
+     animation:  myanibanner3 1s linear;
+}
+
+ .bannerbgtexts h1 {
+      font-family: var(--headertext);
+      font-size: 400px;
+      letter-spacing: 10px;
+      -webkit-text-fill-color: var(--main-bgcolortwo); /* Will override color (regardless of order) */
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: var(--textcolor);
+
+     opacity: 0.08;
+ }
+
+.btn{
+     width: 130px;
+     color: var(--textcolor);
+     background-color: var(--buttoncolor);
+     border: 2px solid var(--buttoncolor);
+     border-radius: 0;
+     
+     margin-top: 30px;
+     padding: 7px;
+
+     transition: all 0.4s ease;
+     animation: myanibanner2 1s linear;
+}
+
+.btn:hover{
+     color: var(--buttoncolor);
+     background-color: var(--main-bgcolortwo);
+}
+
+.btn:focus{
+     -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    outline: 0;
+}
+
+.containers{
+     font-family: var(--headertext);
+     position: absolute;
+     bottom: 70px;
+     right: 10%;
+}
+   
+   div.circTxt {
+     font-size: 25px;
+     text-transform: uppercase;
+     color: var(--textcolor);
+     margin-bottom: 128px;
+     color: whitesmoke;
+   }
+
+
+ .mouse-containers{
+        width: 100px;
+        height: 50px;
+        font-size: 20px;
+        color: #4d4c4c;
+        cursor: pointer;
+        text-decoration: none !important;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+
+        transform: translateX(-50%);
+   }
+
+@keyframes myanibanner{
+     0%{
+          transform: translateX(-200px);
+          opacity: 0;
+     }
+
+     100%{
+          transform: translateX(0px);
+          opacity: 1;
+     }
+}
+
+@keyframes myanibanner2{
+     0%{
+          opacity: 0;
+     }
+
+     50%{
+          opacity: 0.5;
+     }
+
+     100%{
+          opacity: 1;
+     }
+}
+
+@keyframes myanibanner3{
+     0%{
+          top: 60%;
+         left: 50%;
+         opacity: 0;
+     }
+
+     100%{
+          top: 50%;
+         left: 50%;
+         opacity: 1;
+     }
+}
+/* End Banners */
+/* End Header */
+
+/* Start Profile Section */
+.profiles{
+     background-color: var(--main-bgcolorone);
+}
+
+.titles{
+     position: relative;
+}
+
+.profiles .titles h2{
+     font-family: var(--headertext);
+     font-size: 90px;
+     color: rgba(0, 0, 0, 0.1);
+     letter-spacing: 3px;
+}
+
+.titles h1{
+     font-family: var(--headertext);
+     font-size: 3.5rem;
+     color: var(--main-bgcolortwo);
+
+     position: absolute;
+     top: 30%;
+     left: 50%;
+
+     transform: translateX(-50%);
+}
+
+.imagecontainers{
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+}
+
+.img-container{
+     width: 400px;
+     height: 530px;
+     border: 8px solid var(--main-bgcolortwo);
+     border-radius: 3px;
+
+     margin-left: 100px;
+     position: relative;
+
+     /* animation: imgcontani 1s linear; */
+}
+
+.img-container img{
+     width: 100%;
+     height: 110%;
+     box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2);
+
+     position: absolute;
+     top: -14%;
+     left: -10%;
+
+     /* animation: imgani 1s linear; */
+
+     opacity: 0;
+}
+
+.nametexts{
+     color: var(--buttoncolor);
+}
+
+.rightdivs{
+     border-right: 3px solid var(--main-bgcolortwo);
+}
+
+.social-medias i{
+     cursor: pointer;
+     border: 2px solid var(--main-bgcolortwo);
+     color: var(--main-bgcolortwo);
+     text-decoration: none !important;
+
+     padding: 5px;
+}
+
+@keyframes imgani{
+     0%{
+          position: absolute;
+          top: -17%;
+          left: -30%;
+     }
+
+     50%{
+          position: absolute;
+          top: -16%;
+          left: -20%;
+     }
+
+     100%{
+          position: absolute;
+          top: -14%;
+          left: -10%;
+     }
+}
+
+/* @keyframes imgcontani{
+     0%{
+          transform: scale(1);
+          opacity: 1;
+     }
+
+     100%{
+          transform: scale(1);
+          opacity: 1;
+     }
+} */
+/* End Profile Section */
+
+/* Start Skills Section */
+.skills{
+     background-color:var(--main-bgcolortwo);
+}
+
+.skilltitles{
+     position: relative;
+}
+
+.skills .skilltitles h2{
+     font-family: var(--headertext);
+     font-size: 90px;
+     color: rgba(82, 82, 82, 0.5);
+     letter-spacing: 3px;
+}
+
+.skilltitles h1{
+     font-family: var(--headertext);
+     font-size: 4rem;
+     color: var(--buttoncolor);
+
+     position: absolute;
+     top: 25%;
+     left: 50%;
+
+     transform: translateX(-50%);
+}
+
+.left-skill-containers{
+     width: 40%;
+     margin: 0 auto;
+}
+
+.right-skill-containers{
+     width: 40%;
+     margin: 0 auto;
+}
+
+.skillcontents:nth-child(2), .skillcontents:nth-child(5){
+     margin: 50px auto;
+}
+
+.skillcontents label{
+     font-size: 20px;
+     margin-bottom: 10px;
+}
+
+.liquid-containers{
+     width: 100%;
+     height: 15px;
+     background-color: rgba(192, 192, 192, 0.151);
+
+     margin: 0 auto;
+     position: relative;
+}
+
+.liquid-containers span{
+     position: absolute;
+     top: -30px;
+     right: 0;
+}
+
+.liquid-containers::after{
+     content: '';
+     width: 50%;
+     height: 15px;
+     background-color: var(--buttoncolor);
+
+     position: absolute;
+     top: 0;
+     left: 0;
+}
+
+.skillcontents:nth-child(1) .liquid-containers::after{
+     width: 95%;
+}
+
+.skillcontents:nth-child(2) .liquid-containers::after{
+     width: 95%;
+}
+
+.skillcontents:nth-child(3) .liquid-containers::after{
+     width: 95%;
+}
+
+.right-skill-containers .skillcontents:nth-child(1) .liquid-containers::after{
+     width: 93%;
+}
+
+.right-skill-containers .skillcontents:nth-child(2) .liquid-containers::after{
+     width: 90%;
+}
+
+.right-skill-containers .skillcontents:nth-child(3) .liquid-containers::after{
+     width: 90%;
+}
+
+.freelances{
+     font-size: 45px;
+     color: var(--textcolor);
+     opacity: 0.6;
+}
+/* End Skills Section */
+
+/* Start Service Section */
+.services{
+     background-color: var(--main-bgcolortwo);
+     color: var(--buttoncolor);
+     opacity: 0.9;
+}
+
+.servicetitles{
+     position: relative;
+}
+
+.services .servicetitles h2{
+     font-family: var(--headertext);
+     font-size: 90px;
+     color: rgba(87, 87, 87, 0.5);
+     letter-spacing: 3px;
+}
+
+.servicetitles h1{
+     font-family: var(--headertext);
+     font-size: 4rem;
+     color: var(--buttoncolor);
+
+     position: absolute;
+     top: 25%;
+     left: 50%;
+
+     transform: translateX(-50%);
+}
+
+.servicecate{
+     text-align: center;
+
+     margin: 30px auto;
+}
+
+.servicecate .icons{
+     color: var(--buttoncolor);
+     font-size: 70px;
+
+     margin: 40px 0;
+}
+
+.servicecate h5{
+     color: var(--textcolor);
+     text-transform: capitalize;
+     margin: 10px auto;
+}
+
+.servicecate p{
+     font-size: 15px;
+     color: var(--main-bgcolorone);
+     text-align: center;
+}
+/* End Service Section */
+
+/* Start Portfolio Section */
+.portfolios{
+     background-color: var(--main-bgcolortwo);
+     color: var(--buttoncolor);
+}
+
+.portfoliotitles{
+     position: relative;
+}
+
+.portfolios .portfoliotitles h2{
+     font-family: var(--headertext);
+     font-size: 90px;
+     color: rgba(87, 87, 87, 0.5);
+     letter-spacing: 3px;
+}
+
+.portfoliotitles h1{
+     font-family: var(--headertext);
+     font-size: 4rem;
+     color: var(--buttoncolor);
+
+     position: absolute;
+     top: 25%;
+     left: 50%;
+
+     transform: translateX(-50%);
+}
+
+ul .lists{
+     font-family: var(--ptext);
+     color: var(--textcolor);
+     font-size: 25px;
+     cursor: pointer;
+
+     margin: 50px 50px;
+}
+
+.lists.click{
+     color: var(--buttoncolor);
+}
+
+.filters{
+     background-color: rgba(0, 0, 0, 0.98);
+     border: 10px solid rgb(54, 54, 54);
+     border-radius: 3px;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     margin: 10px 20px;
+     padding: 20px;
+
+     transition: all 0.5s ease;
+}
+
+.filters.threed{
+     display: none;
+}
+
+.filters.motion{
+     display: none;
+}
+
+.filters.video{
+     display: none;
+}
+/* End Portfolio Section */
+
+/* Start Customer Section */
+.customers{
+     background-color: var(--main-bgcolorone);
+     color: var(--buttoncolor);
+}
+
+.customertitles{
+     position: relative;
+}
+
+.customers .customertitles h2{
+     font-family: var(--headertext);
+     font-size: 90px;
+     color: rgba(0, 0, 0, 0.1);
+     letter-spacing: 3px;
+}
+
+.customertitles h1{
+     font-family: var(--headertext);
+     font-size: 4rem;
+     color: var(--main-bgcolortwo);
+
+     position: absolute;
+     top: 25%;
+     left: 50%;
+
+     transform: translateX(-50%);
+}
+
+.missioncontainers{
+     width: 100%;
+     height: 50px;
+}
+
+.missiontexts{
+     font-family: var(--ptext);
+     /* font-size: 20px; */
+     color: var(--main-bgcolortwo);
+
+     text-align: center;
+     line-height: 50px;
+}
+
+.customerpfs{
+     border-right: 3px solid var(--main-bgcolortwo);
+}
+
+.carouselimgs{
+     border: 4px solid var(--textcolor);
+     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carouseltexts{
+     font-size: 25px;
+     font-family:var(--headertext);
+     color: var(--main-bgcolortwo);
+}
+
+.feedbacks{
+     width:  550px;
+     color: var(--main-bgcolortwo);
+     background-color: var(--textcolor);
+     border-radius: 10px 100px 10px 10px;
+     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+     margin: 0 auto;
+     position: relative;
+}
+
+.quotes{
+     color: var(--buttoncolor);
+     position: absolute;
+}
+
+.fa-quote-right{
+     top: 70px;
+     left: 20px;
+}
+
+.fa-quote-left{
+     bottom: 10px;
+     right: 20px;
+}
+
+.liquid{
+     height: 4px;
+     background-color: var(--buttoncolor);
+
+     margin-bottom: 20px;
+     animation: myani 10s linear infinite;
+}
+
+@keyframes myani{
+     0%{
+          width: 0;
+     }
+
+     100%{
+          width: 100%;
+     }
+}
+/* End Customer Section */
+
+/* Start Contact Section */
+.contacts{
+     background-image: linear-gradient(
+          110deg,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.6)50%,
+          transparent 50%
+     ), url(../assets/img/pfpicture/christopher-campbell-Xo4YvBp6IBM-unsplash.jpg);
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     color: var(--main-bgcolorone);
+}
+
+.contacts h5{
+     font-family: var(--headertext);
+     font-size: 40px;
+     color: var(--main-bgcolorone);
+}
+
+.form-group{
+     margin: 10px 0;
+}
+
+.inputs{
+     background: transparent;
+     border-color: transparent;
+     border-bottom: 2px solid var(--textcolor);
+}
+
+.inputs:focus{
+     background: transparent;
+     border-color: transparent;
+     border-bottom: 2px solid #de4121;
+     box-shadow: none !important;
+     color: #eee;
+}
+
+.labels{
+     font-size: 15px;
+     color: #999;
+
+     display:inline-block;
+     margin-left: 4px;
+     margin-top: -50px;
+}
+
+.submitbuttons{
+     width: 100%;
+}
+
+.submitbuttons i {
+     opacity: 0;
+}
+
+.submitbuttons:hover{
+     background-color: rgb(255, 111, 15);
+     color: white;
+     border-color:rgb(255, 111, 15) ;
+}
+
+.submitbuttons:hover i{
+     animation: buttonani 1s linear infinite;
+}
+
+ blockquote .blocks{
+     width: 7px;
+     height: 7px;
+     background-color: var(--buttoncolor);
+
+     display: inline-block;
+}
+
+@keyframes buttonani{
+     0%{
+          transform: translateX(0) scale(0);
+          opacity: 0;
+     }
+
+     50%{
+          transform: translateX(5px) scale(1);
+          opacity: 1;
+     }
+
+     70%{
+          transform: translateX(15px) scale(1);
+          opacity: 1;
+     }
+
+     100%{
+          transform: translateX(25px) scale(1);
+          opacity: 1;
+     }
+}
+
+/* End Contact Section */
+
+/* Start footer Section */
+footer{
+     background-color: rgb(226, 89, 64);
+     border-radius: 70px 70px 0 0;
+}
+
+footer h1{
+     font-family: var(--headertext);
+     font-size: 4rem;
+     color: var(--textcolor);
+}
+
+.contactmenus{
+     border-bottom: 2px solid var(--textcolor);
+}
+
+.contactcontainers{
+     color: var(--textcolor);
+     text-transform: capitalize;
+
+     display: flex;
+     margin: 0 auto;
+}
+
+.contactcontainers i{
+     margin: 24px 20px;
+}
+
+.contactcontainers h5 span{
+     font-size: 16px;
+     display: block;
+     margin: 10px 0;
+}
+/* End Footer Section */
+
+@media (max-width: 600px){
+     .containers{
+          display: none;
+     }
+
+     .rightdivs{
+          border: 0;
+     }
+}
